@@ -3,9 +3,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cfg from './config';
 
+import routes from './routes'
+
 let app = express();
 
 app.use(bodyParser.json());
+
+app.use('/api', routes.genres);
 
 app.get('/', (req, res) => {
     res.send('Hello, world!');
