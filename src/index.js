@@ -1,8 +1,11 @@
 
 import express from 'express';
-import cfg from './config'
+import bodyParser from 'body-parser';
+import cfg from './config';
 
 let app = express();
+
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
     res.send('Hello, world!');
